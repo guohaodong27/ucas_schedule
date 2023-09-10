@@ -59,7 +59,7 @@ def add_course(urls) -> list[Course]:
         # 1.获取课程名称
         course_title = bs_obj.select('#main-content > div > div > div.m-cbox.m-lgray > div.mc-body > p:nth-child(1)')
         course_title = bf(str(course_title), "html.parser")
-        course_title = course_title.text.split("：")[1][1:-1]
+        course_title = course_title.text.split("：")[1][0:-1]
         # 2.课程安排所在table
         tag = bs_obj.select('#main-content > div > div > div.m-cbox.m-lgray > div.mc-body > table')
         item_bs = bf(str(tag), "html.parser")
